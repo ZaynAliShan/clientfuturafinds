@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 
+====================
+  Variables
+====================
+*/
+
+:root {
+  /* colors */
+  --primary-100: #e2e0ff;
+  --primary-200: #c1beff;
+  --primary-300: #a29dff;
+  --primary-400: #837dff;
+  --primary-500: #645cff;
+  --primary-600: #504acc;
+  --primary-700: #3c3799;
+  --primary-800: #282566;
+  --primary-900: #141233;
+
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #a1ffb5;
+  --green-dark: #0f5132;
+  --transition: all 0.3s linear;
+}
+
+/* 
+====================
+  Global Styles
+====================
+*/
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--grey-50);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--primary-600);
+}
+
+image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.wrapper {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.btn {
+  color: #fff;
+  background-color: var(--primary-500);
+  border: none;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--primary-600);
+  transform: scale(0.95);
+}
+
+/* 
+====================
+  Loader
+====================
+*/
+
+.loader-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 10px solid #333;
+  border-radius: 50%;
+  border-top: 10px solid #3498db;
+  width: 80px;
+  height: 80px;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+====================
+  Global Container
+====================
+*/
+.global-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* 
+====================
+  Navbar
+====================
+*/
+
+.navbar {
+  background-color: var(--white);
+}
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+.navbar-logo > h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.navbar-logo > h1 > span:last-child {
+  margin-left: 3px;
+  color: var(--primary-600);
+}
+
+.navbar-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.navbar-profile > h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-logo > h1 {
+    font-size: 3rem;
+  }
+  .navbar-profile > h3 {
+    font-size: 2rem;
+  }
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/* 
+====================
+  Login Page
+====================
+*/
+
+.login {
+  display: grid;
+  place-items: center;
+}
+.login-wrapper {
+  max-width: 500px;
+  background-color: var(--white);
+  margin-top: 7rem;
+  padding: 2.5rem 3rem;
+  box-shadow: 1px 4px 3px var(--grey-300);
+}
+
+.login-form > h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.name-container,
+.email-container,
+.password-container {
+  display: grid;
+  font-size: 1.7rem;
+  font-weight: 600;
+  gap: 5px;
+  letter-spacing: 1px;
+}
+
+.name-container input,
+.email-container input,
+.password-container input {
+  border: none;
+  background-color: var(--grey-100);
+  padding: 0.7rem;
+  border-radius: 5px;
+}
+
+.name-container input:focus,
+.email-container input:focus,
+.password-container input:focus {
+  border: none;
+  outline: 2px solid var(--primary-400);
+}
+
+.email-container {
+  margin-top: 1rem;
+}
+.password-container {
+  margin: 1rem 0 2rem 0;
+}
+
+.login-form .btn {
+  width: 100%;
+}
+
+.login-form > p {
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+.login-form > p > span {
+  color: var(--primary-600);
+  transition: var(--transition);
+}
+
+.login-form > p > span:hover {
+  cursor: pointer;
+}
+
+/* 
+====================
+  Products Page
+====================
+*/
+
+.products {
+  padding: 2rem 0;
+  display: grid;
+  place-items: center;
+}
+
+.products > h1 {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.plus-icon-container {
+  margin-top: 2rem;
+}
+
+.plus-icon-container button {
+  border: none;
+}
+
+.create-btn {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  text-decoration: none;
+  border: none;
+}
+
+.create-btn > span {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.plus-icon {
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+
+.search-input {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 2px solid var(--grey-200);
+  width: 100%;
+  max-width: 400px;
+}
+
+.filters-container {
+  margin: 1rem 0 2rem 0;
+}
+
+.filters-label {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.products-wrapper {
+  box-shadow: 1px 1px 3px var(--grey-300);
+  display: grid;
+  gap: 1rem;
+}
+
+table {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--black);
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+th,
+caption {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+caption {
+  padding: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  background-color: var(--grey-300);
+}
+
+tr:nth-of-type(2n) {
+  background-color: var(--grey-100);
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 650px) {
+  th {
+    display: none;
+  }
+  td {
+    display: grid;
+    grid-template-columns: 15ch auto;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  td:first-child {
+    padding-top: 2rem;
+  }
+
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+  td::before {
+    content: attr(datatype) ": ";
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+}
+
+.edit-btn {
+  color: rgb(0, 173, 0);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.5s linear;
+  background-color: transparent;
+  font-size: 1.7rem;
+}
+.edit-btn > a {
+  text-decoration: none;
+  color: rgb(0, 173, 0);
+}
+.delete-btn {
+  color: rgb(248, 34, 34);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.5s linear;
+  background-color: transparent;
+  font-size: 1.3rem;
+}
+.minus-btn {
+  color: var(--primary-600);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.5s linear;
+  background-color: transparent;
+  font-size: 1.7rem;
+}
+.plus-btn {
+  color: var(--primary-600);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.5s linear;
+  background-color: transparent;
+  font-size: 1.7rem;
+}
+.save-btn {
+  color: rgb(0, 173, 0);
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.5s linear;
+  background-color: transparent;
+  font-size: 1.7rem;
+}
+
+/* 
+====================
+  Modal Component
+====================
+*/
+
+.modal-container {
+  position: absolute;
+  inset: 0;
+  background-color: var(--grey-100);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  background-color: var(--white);
+  width: 60%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 250px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.modal > h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.modal .modal-btn {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: transform 0.3s linear;
+  border: 1px solid black;
+}
+.modal-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.modal .btn {
+  margin-right: 1.5rem;
+  padding: 0.7rem 1rem;
+}
+
+/* 
+====================
+  Create Page
+====================
+*/
+
+.create-product {
+  padding: 2rem 0;
+  display: grid;
+  place-items: center;
+}
+
+.create-product .wrapper > a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--primary-500);
+}
+
+.create-product .wrapper > a > h4 {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--primary-500);
+  margin: 1rem 0;
+}
+
+.create-product-wrapper {
+  max-width: 500px;
+  background-color: var(--white);
+  padding: 2.5rem 3rem;
+  margin-top: 2rem;
+  box-shadow: 1px 4px 3px var(--grey-300);
+}
+
+.create-product-form > h3 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.sku-container,
+.name-container,
+.sold-container,
+.onHold-container,
+.toCome-container {
+  display: grid;
+  font-size: 1.5rem;
+  font-weight: 600;
+  gap: 5px;
+  letter-spacing: 1px;
+}
+
+.sku-container input,
+.name-container input,
+.sold-container input,
+.onHold-container input,
+.toCome-container input {
+  border: none;
+  background-color: var(--grey-100);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.sku-container input:focus,
+.name-container input:focus,
+.sold-container input:focus,
+.onHold-container input:focus,
+.toCome-container input:focus {
+  border: none;
+  outline: 2px solid var(--primary-400);
+}
+
+.name-container {
+  margin-top: 1rem;
+}
+.sold-container {
+  margin: 1rem 0 1rem 0;
+}
+.toCome-container {
+  margin: 1rem 0 2rem 0;
+}
+
+.create-product-form .btn {
+  width: 100%;
+}
+
+.create-product-form > p {
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+.create-product-form > p > span {
+  color: var(--primary-600);
+  transition: var(--transition);
+}
+
+.create-product-form > p > span:hover {
+  cursor: pointer;
+}
