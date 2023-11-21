@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-const REMOTE_SERVER = "https://zainim.netlify.app"
+const REMOTE_SERVER = "https://serverfuturafinds.onrender.com"
 
 const Login = () => {
   const [email, setEmail] = useState("");
